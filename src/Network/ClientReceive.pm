@@ -158,6 +158,12 @@ sub shop_close {
 	$shopstarted = 0;
 }
 
+sub hotkey_change {
+	my ($self, $args) = @_;
+	
+	$self->sendHotKeyChange($args);
+}
+
 =pod
 # sendSync
 	if ($masterServer->{syncID} && $switch eq sprintf('%04X', hex($masterServer->{syncID}))) {

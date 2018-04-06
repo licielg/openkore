@@ -1299,4 +1299,16 @@ sub sendBlockingPlayerCancel {
 	$self->sendToServer($msg);
 }
 
+sub sendHotKeyChange {
+	my ($self, $args) = @_;
+	
+	$self->sendToServer($self->reconstruct({
+		switch => 'hotkey_change',
+		idx => $args->{idx},
+		type => $args->{type},
+		id => $args->{id},
+		lvl => $args->{lvl},
+	}));
+}
+
 1;
